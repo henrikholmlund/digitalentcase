@@ -1,0 +1,11 @@
+node_modules/
+*.php
+template-parts/
+inc/
+layouts/
+languages/
+*.css
+readme.txt
+
+
+
