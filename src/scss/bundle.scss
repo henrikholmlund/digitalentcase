@@ -1,10 +1,12 @@
 @import './components/slider.scss';
+@import './components/basic_template.scss';
+
 $colour: rgb(0, 255, 81);
 
 body {
-  background-color: $colour;
+  background-color: white;
 }
-
+// just for debugging
 // * {
 //   outline: 1px solid red;
 // }

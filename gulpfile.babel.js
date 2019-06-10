@@ -13,13 +13,14 @@ import browserSync from 'browser-sync';
 import zip from 'gulp-zip';
 import info from './package.json';
 import replace from 'gulp-replace';
-import wpPot from 'gulp-wp-pot';
 const PRODUCTION = yargs.argv.prod;
 
 const server = browserSync.create();
 export const serve = done => {
   server.init({
-    proxy: 'http://localhost:8888/' // put your local website link here
+    server: {
+      baseDir: './'
+    } // put your local website link here
   });
   done();
 };
@@ -36,7 +37,7 @@ export const watchForChanges = () => {
     series(copy, reload)
   );
   watch('src/js/**/*.js', series(scripts, reload));
-  watch('**/*.php', reload);
+  watch('**/*.html', reload);
 };
 
 export const styles = () => {
@@ -128,17 +129,6 @@ export const compress = () => {
     .pipe(dest('bundled'));
 };
 
-export const pot = () => {
-  return src('**/*.php')
-    .pipe(
-      wpPot({
-        domain: '_themename',
-        package: info.name
-      })
-    )
-    .pipe(dest(`languages/${info.name}.pot`));
-};
-
 export const dev = series(
   clean,
   parallel(styles, images, copy, scripts),
@@ -148,7 +138,6 @@ export const dev = series(
 export const build = series(
   clean,
   parallel(styles, images, copy, scripts),
-  pot,
   compress
 );
 
