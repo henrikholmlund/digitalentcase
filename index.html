@@ -8,41 +8,125 @@
     <link rel="stylesheet" href="dist/css/bundle.css" />
   </head>
   <body>
-    <div class="form-container">
-      <form class="add-person">
-        <input type="text" name="name" placeholder="Namn" required />
-        <input type="text" name="age" placeholder="Ålder" required />
-        <input type="text" name="email" placeholder="Email" required />
-        <input type="text" name="address" placeholder="Adress" required />
-        <input type="text" name="image" placeholder="Bild" required />
-        <select id="stage-select" name="stage">
-          <option value="">-- Välj ett rekryteringssteg --</option>
-          <option value="Kontakt">Kontakt</option>
-          <option value="Dialog">Dialog</option>
-          <option value="Intervju">Intervju</option>
-          <option value="Erbjudande">Erbjudande</option>
-          <option value="Avslutad">Avslutad</option>
-        </select>
-        <input type="submit" value="+ Lägg till" />
-      </form>
-    </div>
-    <div class="wrapper">
-      <h2>Kontakt</h2>
-      <div class="people">
-        <p>Loading People...</p>
-      </div>
-    </div>
-    <div class="wrapper">
-      <h2>Dialog</h2>
-      <div class="people">
-        <p>Loading People...</p>
+    <header class="site-header">
+      <div>Image home</div>
+      <div>Search Box</div>
+      <div class="center-logo">Logo</div>
+    </header>
+    <div class="container">
+      <div class="container-canvas">
+        <div class="wrapper">
+          <h2>Kontakt</h2>
+          <div class="people" id="contact"></div>
+          <form class="add-person">
+            <input type="text" name="name" placeholder="Namn" required />
+            <input type="text" name="age" placeholder="Ålder" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="text" name="address" placeholder="Adress" required />
+            <input type="text" name="image" placeholder="Bild" required />
+            <select id="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" selected>Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad">Avslutad</option>
+            </select>
+            <input type="submit" value="+ Lägg till" />
+          </form>
+        </div>
+        <div class="wrapper">
+          <h2>Dialog</h2>
+          <div class="people" id="dialogue"></div>
+          <form class="add-person">
+            <input type="text" name="name" placeholder="Namn" required />
+            <input type="text" name="age" placeholder="Ålder" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="text" name="address" placeholder="Adress" required />
+            <input type="text" name="image" placeholder="Bild" required />
+            <select id="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt">Kontakt</option>
+              <option value="Dialog" selected>Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad">Avslutad</option>
+            </select>
+            <input type="submit" value="+ Lägg till" />
+          </form>
+        </div>
+        <div class="wrapper">
+          <h2>Intervju</h2>
+          <div class="people" id="interview"></div>
+          <form class="add-person">
+            <input type="text" name="name" placeholder="Namn" required />
+            <input type="text" name="age" placeholder="Ålder" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="text" name="address" placeholder="Adress" required />
+            <input type="text" name="image" placeholder="Bild" required />
+            <select id="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt">Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju" selected>Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad">Avslutad</option>
+            </select>
+            <input type="submit" value="+ Lägg till" />
+          </form>
+        </div>
+        <div class="wrapper">
+          <h2>Erbjudande</h2>
+          <div class="people" id="offer"></div>
+          <form class="add-person">
+            <input type="text" name="name" placeholder="Namn" required />
+            <input type="text" name="age" placeholder="Ålder" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="text" name="address" placeholder="Adress" required />
+            <input type="text" name="image" placeholder="Bild" required />
+            <select id="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt">Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande" selected>Erbjudande</option>
+              <option value="Avslutad">Avslutad</option>
+            </select>
+            <input type="submit" value="+ Lägg till" />
+          </form>
+        </div>
+        <div class="wrapper">
+          <h2>Avslut</h2>
+          <div class="people" id="termination"></div>
+          <form class="add-person">
+            <input type="text" name="name" placeholder="Namn" required />
+            <input type="text" name="age" placeholder="Ålder" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="text" name="address" placeholder="Adress" required />
+            <input type="text" name="image" placeholder="Bild" required />
+            <select id="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt">Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad" selected>Avslutad</option>
+            </select>
+            <input type="submit" value="+ Lägg till" />
+          </form>
+        </div>
       </div>
     </div>
 
     <script>
-      const addPerson = document.querySelector('.add-person');
+      const addPerson = document.querySelectorAll('.add-person');
       const peopleList = document.querySelector('.people');
       const people = JSON.parse(localStorage.getItem('people')) || [];
+      const contactList = document.querySelector('#contact');
+      const dialogueList = document.querySelector('#dialogue');
+      const interviewList = document.querySelector('#interview');
+      const offerList = document.querySelector('#offer');
+      const terminationList = document.querySelector('#termination');
 
       const ID = function() {
         // Math.random should be unique because of its seeding algorithm.
@@ -76,6 +160,8 @@
           userID
         };
 
+        console.log(person);
+
         people.push(person);
         populateList(people, peopleList);
         localStorage.setItem('people', JSON.stringify(people));
@@ -83,9 +169,12 @@
       }
 
       function populateList(people = [], peopleList) {
-        peopleList.innerHTML = people
-          .map((person, i) => {
-            return `
+        people.map(p => {
+          if (p.stage === 'Kontakt') {
+            contactList.innerHTML = people
+              .filter(person => person.stage === 'Kontakt')
+              .map((person, i) => {
+                return `
             <div data-id="${
               person.userID
             }" name="person${i}" class="people-list">
@@ -98,21 +187,105 @@
               <p>${person.userID}</p>
             </div>
           `;
-          })
-          .join('');
+              })
+              .join('');
+          }
+          if (p.stage === 'Dialog') {
+            dialogueList.innerHTML = people
+              .filter(person => person.stage === 'Dialog')
+              .map((person, i) => {
+                return `
+            <div data-id="${
+              person.userID
+            }" name="person${i}" class="people-list">
+              <p>${person.name}</p>
+              <p>${person.age}</p>
+              <p>${person.email}</p>
+              <p>${person.address}</p>
+              <p>${person.image}</p>
+              <p >${person.stage}</span>
+              <p>${person.userID}</p>
+            </div>
+          `;
+              })
+              .join('');
+          }
+          if (p.stage === 'Intervju') {
+            interviewList.innerHTML = people
+              .filter(person => person.stage === 'Intervju')
+              .map((person, i) => {
+                return `
+            <div data-id="${
+              person.userID
+            }" name="person${i}" class="people-list">
+              <p>${person.name}</p>
+              <p>${person.age}</p>
+              <p>${person.email}</p>
+              <p>${person.address}</p>
+              <p>${person.image}</p>
+              <p >${person.stage}</span>
+              <p>${person.userID}</p>
+            </div>
+          `;
+              })
+              .join('');
+          }
+          if (p.stage === 'Erbjudande') {
+            offerList.innerHTML = people
+              .filter(person => person.stage === 'Erbjudande')
+              .map((person, i) => {
+                return `
+            <div data-id="${
+              person.userID
+            }" name="person${i}" class="people-list">
+              <p>${person.name}</p>
+              <p>${person.age}</p>
+              <p>${person.email}</p>
+              <p>${person.address}</p>
+              <p>${person.image}</p>
+              <p >${person.stage}</span>
+              <p>${person.userID}</p>
+            </div>
+          `;
+              })
+              .join('');
+          }
+          if (p.stage === 'Avslut') {
+            terminationList.innerHTML = people
+              .filter(person => person.stage === 'Avslut')
+              .map((person, i) => {
+                return `
+            <div data-id="${
+              person.userID
+            }" name="person${i}" class="people-list">
+              <p>${person.name}</p>
+              <p>${person.age}</p>
+              <p>${person.email}</p>
+              <p>${person.address}</p>
+              <p>${person.image}</p>
+              <p >${person.stage}</span>
+              <p>${person.userID}</p>
+            </div>
+          `;
+              })
+              .join('');
+          }
+        });
       }
 
-      function toggleDone(e) {
-        if (!e.target.matches('input')) return; // skip this unless it's an input
-        const el = e.target;
-        const index = el.dataset.index;
-        people[index].done = !people[index].done;
-        localStorage.setItem('people', JSON.stringify(people));
-        populateList(people, peopleList);
-      }
+      // function toggleDone(e) {
+      //   if (!e.target.matches('input')) return; // skip this unless it's an input
+      //   const el = e.target;
+      //   const index = el.dataset.index;
+      //   people[index].done = !people[index].done;
+      //   localStorage.setItem('people', JSON.stringify(people));
+      //   populateList(people, peopleList);
+      // }
 
-      addPerson.addEventListener('submit', addCandidate);
-      peopleList.addEventListener('click', toggleDone);
+      addPerson.forEach(person =>
+        person.addEventListener('submit', addCandidate)
+      );
+      // peopleList.addEventListener('click', toggleDone);
 
       populateList(people, peopleList);
     </script>

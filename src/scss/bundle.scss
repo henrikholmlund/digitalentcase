@@ -1,11 +1,12 @@
 @import './components/slider.scss';
 @import './components/basic_template.scss';
+@import './components/drag.scss';
 
 $colour: rgb(0, 255, 81);
 
-body {
-  background-color: white;
-}
+// body {
+//   background-color: white;
+// }
 // just for debugging
 // * {
 //   outline: 1px solid red;
