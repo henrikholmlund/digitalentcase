@@ -15,7 +15,7 @@ function drop_handler(ev, el) {
   ev.preventDefault();
   // Get the id of the target and add the moved element to the target's DOM
   var data = ev.dataTransfer.getData('text/plain');
-  console.log(data);
+  console.log({ data, el });
   el.appendChild(document.getElementById(data));
 }
 
