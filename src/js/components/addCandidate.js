@@ -52,7 +52,6 @@ function addCandidate(e) {
 
   people.push(person);
   populateList(people, peopleList);
-  // createEventListener(userID);
   localStorage.setItem('people', JSON.stringify(people));
   this.reset();
 }

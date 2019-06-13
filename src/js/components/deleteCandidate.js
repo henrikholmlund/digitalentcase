@@ -3,6 +3,7 @@ import { populateList } from './addCandidate';
 function deleteCandidate(e) {
   console.log('deletecandidate was clicked', e);
   const peopleList = document.querySelector('.people');
+  //get the userID
   const userID = this.parentNode.dataset.id;
 
   const people = JSON.parse(localStorage.getItem('people')) || [];

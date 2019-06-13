@@ -24,13 +24,13 @@ function updateCandidate(e) {
   const people = JSON.parse(localStorage.getItem('people')) || [];
 
   const person = {
-    name: name,
-    age: age,
-    email: email,
-    address: address,
-    image: image,
-    stage: stage,
-    userID: userID
+    name,
+    age,
+    email,
+    address,
+    image,
+    stage,
+    userID
   };
 
   console.log(person);
@@ -54,7 +54,7 @@ function updateCandidate(e) {
   console.log(updatedCandidates);
 
   populateList(updatedCandidates, peopleList);
-  //   localStorage.removeItem('people');
+  localStorage.removeItem('people');
   localStorage.setItem('people', JSON.stringify(updatedCandidates));
 }
 
