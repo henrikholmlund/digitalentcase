@@ -127,6 +127,7 @@
             </select>
             <input type="submit" value="+ Lägg till" />
           </form>
+          <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
         <div class="wrapper">
           <h2>Avslut</h2>
@@ -172,15 +173,20 @@
         }
       });
 
-      // document
-      //   .querySelector('.container-canvas')
-      //   .addEventListener('click', function(event) {
+      const allAddPersonButtons = document.querySelectorAll(
+        '.add-person-dialogue'
+      );
 
-      //     if (event.target.classList.contains('change-button')) {
-      //       // Do something
-      //       console.log('yes', this);
-      //     }
-      //   });
+      function toggleFoldout(e) {
+        console.log(this);
+        const myParentDiv = this.parentNode.querySelector('form');
+        console.log(myParentDiv);
+        myParentDiv.classList.toggle('add-person_open');
+      }
+
+      allAddPersonButtons.forEach(button =>
+        button.addEventListener('click', toggleFoldout)
+      );
     </script>
   </body>
 </html>
