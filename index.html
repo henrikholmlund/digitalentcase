@@ -9,9 +9,22 @@
   </head>
   <body>
     <header class="site-header">
-      <div>Image home</div>
-      <div>Search Box</div>
-      <div class="center-logo">Logo</div>
+      <div class="image-home">
+        <img src="src/images/house-64.png" alt="" />
+      </div>
+      <div class="search-box">
+        <input
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          type="search"
+          value=""
+          class="search"
+        />
+        <img src="src/images/white-search-icon-transparent-background-6.jpg" />
+      </div>
+      <div class="center-logo"><h2>oTrello</h2></div>
+      <ul class="suggestions"></ul>
     </header>
     <div class="container">
       <div class="container-canvas">
@@ -20,7 +33,7 @@
           <div
             class="people"
             id="contact"
-            ondrop="drop_handler(event);"
+            ondrop="drop_handler(event, this);"
             ondragover="dragover_handler(event);"
           ></div>
           <form class="add-person">
@@ -29,7 +42,7 @@
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
             <input type="text" name="image" placeholder="Bild" required />
-            <select id="stage-select" name="stage">
+            <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt" selected>Kontakt</option>
               <option value="Dialog">Dialog</option>
@@ -54,7 +67,7 @@
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
             <input type="text" name="image" placeholder="Bild" required />
-            <select id="stage-select" name="stage">
+            <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
               <option value="Dialog" selected>Dialog</option>
@@ -79,7 +92,7 @@
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
             <input type="text" name="image" placeholder="Bild" required />
-            <select id="stage-select" name="stage">
+            <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
               <option value="Dialog">Dialog</option>
@@ -104,7 +117,7 @@
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
             <input type="text" name="image" placeholder="Bild" required />
-            <select id="stage-select" name="stage">
+            <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
               <option value="Dialog">Dialog</option>
@@ -129,7 +142,7 @@
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
             <input type="text" name="image" placeholder="Bild" required />
-            <select id="stage-select" name="stage">
+            <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
               <option value="Dialog">Dialog</option>
@@ -142,6 +155,32 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase.js"></script>
     <script src="dist/js/bundle.js"></script>
+    <script>
+      //Get the dynamically created buttons with a live HTML-collection (getElementsByTagName)
+      const col = document.querySelector('.container-canvas');
+      const colbuttons = col.getElementsByTagName('button');
+      //Make this into an array to be able to loop through
+      const colbuttonsArray = [...colbuttons];
+
+      colbuttonsArray.forEach(col => {
+        if (col.classList.contains('change-button')) {
+          col.addEventListener('click', updateCandidate);
+        } else if (col.classList.contains('delete-button')) {
+          col.addEventListener('click', deleteCandidate);
+        }
+      });
+
+      // document
+      //   .querySelector('.container-canvas')
+      //   .addEventListener('click', function(event) {
+
+      //     if (event.target.classList.contains('change-button')) {
+      //       // Do something
+      //       console.log('yes', this);
+      //     }
+      //   });
+    </script>
   </body>
 </html>

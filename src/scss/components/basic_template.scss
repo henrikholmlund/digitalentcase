@@ -20,6 +20,28 @@ html {
   box-sizing: inherit;
 }
 
+button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+  border: solid 1px transparent;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  color: #ffffff;
+  background-color: #ec9488;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #ec9488;
+    border-color: currentColor;
+    background-color: white;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 .site-header {
   width: 100%;
   height: 40px;
@@ -35,11 +57,96 @@ html {
   padding: 4px;
 }
 
+.search-box {
+  background-color: hsla(0, 0%, 100%, 0.3);
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: hsla(0, 0%, 100%, 0.5);
+  float: left;
+  font-size: 13px;
+  height: 32px;
+  line-height: 19px;
+  margin: 0;
+  outline: none;
+  padding-left: 8px;
+  padding-right: 8px;
+  transition: all 0.15s;
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.4);
+  }
+  input {
+    background-color: #ebecf0;
+    border: none;
+    // box-shadow: inset 0 0 0 2px #dfe1e6;
+    background-color: transparent;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: hsla(0, 0%, 100%, 0.7);
+    float: left;
+    font-size: 13px;
+    height: 24px;
+    line-height: 19px;
+    margin: 0;
+    outline: none;
+    transition: width 0.15s;
+    width: 140px;
+  }
+
+  img {
+    width: 24px;
+    height: auto;
+  }
+}
+.search-box__open {
+  width: 380px;
+  input {
+    width: 90%;
+  }
+}
+.image-home {
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  box-shadow: none;
+  color: #fff;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  margin: 4px;
+  padding: 0;
+  transition: 0.1s ease;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.4);
+  }
+  img {
+    width: 24px;
+    height: auto;
+  }
+}
+
 .center-logo {
   display: block;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
+  h2 {
+    color: white;
+    font-weight: 800;
+  }
 }
 
 .container {
@@ -64,7 +171,7 @@ html {
 }
 
 h2 {
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-weight: 200;
 }
@@ -74,6 +181,7 @@ h2 {
   padding: 0;
   text-align: left;
   list-style: none;
+  min-height: 100px;
 }
 
 .people li {
@@ -115,6 +223,14 @@ select {
   border-radius: 3px;
 }
 
+.update-person input,
+select {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  border-radius: 3px;
+}
+
 .people-list {
   background-color: #fff;
   border-radius: 3px;
@@ -124,6 +240,10 @@ select {
   margin-bottom: 8px;
   max-width: 300px;
   min-height: 20px;
+  border: 1px solid gray;
+  p {
+    padding: 5px;
+  }
 }
 
 .form-container {

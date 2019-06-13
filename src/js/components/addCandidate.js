@@ -8,6 +8,7 @@ const offerList = document.querySelector('#offer');
 const terminationList = document.querySelector('#termination');
 
 const ID = function() {
+  // Create a unique id for each person appended to the DOM
   // Math.random should be unique because of its seeding algorithm.
   // Convert it to base 36 (numbers + letters), and grab the first 9 characters
   // after the decimal.
@@ -18,6 +19,14 @@ const ID = function() {
       .substr(2, 9)
   );
 };
+
+// function createEventListener(id) {
+//   const element = document.querySelector(`[data-id="${id}"]`);
+
+//   return element.addEventListener('click', function(event) {
+//     console.log('was clicked', this);
+//   });
+// }
 
 function addCandidate(e) {
   e.preventDefault();
@@ -47,7 +56,12 @@ function addCandidate(e) {
   this.reset();
 }
 
-function populateList(people = [], peopleList) {
+export function populateList(people = [], peopleList) {
+  contactList.innerHTML = '';
+  dialogueList.innerHTML = '';
+  interviewList.innerHTML = '';
+  offerList.innerHTML = '';
+  terminationList.innerHTML = '';
   people.map(p => {
     if (p.stage === 'Kontakt') {
       contactList.innerHTML = people
@@ -57,13 +71,22 @@ function populateList(people = [], peopleList) {
       <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p>${person.name}</p>
-        <p>${person.age}</p>
-        <p>${person.email}</p>
-        <p>${person.address}</p>
-        <p>${person.image}</p>
-        <p >${person.stage}</span>
-        <p>${person.userID}</p>
+        <p contenteditable="true" name="name">${person.name}</p>
+        <p contenteditable="true" name="age">${person.age}</p>
+        <p contenteditable="true" name="email">${person.email}</p>
+        <p contenteditable="true" name="address">${person.address}</p>
+        <p contenteditable="true" name="image">${person.image}</p>
+        <select class="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" selected>Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad" >Avslutad</option>
+        </select>
+        <p >${person.userID}</p>
+        <button class="change-button">Ändra</button>
+        <button class="delete-button">Ta bort</button>
       </div>
     `;
         })
@@ -82,7 +105,7 @@ function populateList(people = [], peopleList) {
         <p>${person.email}</p>
         <p>${person.address}</p>
         <p>${person.image}</p>
-        <p >${person.stage}</span>
+        <p >${person.stage}</p>
         <p>${person.userID}</p>
       </div>
     `;
@@ -102,7 +125,7 @@ function populateList(people = [], peopleList) {
         <p>${person.email}</p>
         <p>${person.address}</p>
         <p>${person.image}</p>
-        <p >${person.stage}</span>
+        <p>${person.stage}</p>
         <p>${person.userID}</p>
       </div>
     `;
@@ -122,7 +145,7 @@ function populateList(people = [], peopleList) {
         <p>${person.email}</p>
         <p>${person.address}</p>
         <p>${person.image}</p>
-        <p >${person.stage}</span>
+        <p >${person.stage}</p>
         <p>${person.userID}</p>
       </div>
     `;
@@ -142,7 +165,7 @@ function populateList(people = [], peopleList) {
         <p>${person.email}</p>
         <p>${person.address}</p>
         <p>${person.image}</p>
-        <p >${person.stage}</span>
+        <p >${person.stage}</p>
         <p>${person.userID}</p>
       </div>
     `;
@@ -155,3 +178,4 @@ function populateList(people = [], peopleList) {
 addPerson.forEach(person => person.addEventListener('submit', addCandidate));
 
 populateList(people, peopleList);
+window.populateList = populateList;
