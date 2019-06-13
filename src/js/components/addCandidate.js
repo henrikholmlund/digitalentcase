@@ -2,9 +2,6 @@ const addPerson = document.querySelectorAll('.add-person');
 const peopleList = document.querySelector('.people');
 const people = JSON.parse(localStorage.getItem('people')) || [];
 const contactList = document.querySelector('#contact');
-const contactList_childNodes = contactList.childNodes;
-console.log(contactList_childNodes);
-
 const dialogueList = document.querySelector('#dialogue');
 const interviewList = document.querySelector('#interview');
 const offerList = document.querySelector('#offer');
@@ -22,6 +19,14 @@ const ID = function() {
       .substr(2, 9)
   );
 };
+
+// function createEventListener(id) {
+//   const element = document.querySelector(`[data-id="${id}"]`);
+
+//   return element.addEventListener('click', function(event) {
+//     console.log('was clicked', this);
+//   });
+// }
 
 function addCandidate(e) {
   e.preventDefault();
@@ -47,6 +52,7 @@ function addCandidate(e) {
 
   people.push(person);
   populateList(people, peopleList);
+  // createEventListener(userID);
   localStorage.setItem('people', JSON.stringify(people));
   this.reset();
 }
@@ -80,7 +86,8 @@ export function populateList(people = [], peopleList) {
               <option value="Avslutad" >Avslutad</option>
         </select>
         <p >${person.userID}</p>
-        <button>Ändra</button>
+        <button class="change-button">Ändra</button>
+        <button class="delete-button">Ta bort</button>
       </div>
     `;
         })

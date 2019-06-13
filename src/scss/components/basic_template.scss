@@ -64,7 +64,7 @@ html {
 }
 
 h2 {
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-weight: 200;
 }
@@ -133,6 +133,10 @@ select {
   margin-bottom: 8px;
   max-width: 300px;
   min-height: 20px;
+  border: 1px solid gray;
+  p {
+    padding: 5px;
+  }
 }
 
 .form-container {

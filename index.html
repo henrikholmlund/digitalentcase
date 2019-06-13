@@ -142,23 +142,31 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase.js"></script>
     <script src="dist/js/bundle.js"></script>
     <script>
+      //Get the dynamically created buttons with a live HTML-collection (getElementsByTagName)
       const col = document.querySelector('.container-canvas');
       const colbuttons = col.getElementsByTagName('button');
-      const colbuttonsArray = Array.from(colbuttons);
+      //Make this into an array to be able to loop through
+      const colbuttonsArray = [...colbuttons];
 
-      function handleClick(e) {
-        console.log('i was clicked');
-      }
+      colbuttonsArray.forEach(col => {
+        if (col.classList.contains('change-button')) {
+          col.addEventListener('click', updateCandidate);
+        } else if (col.classList.contains('delete-button')) {
+          col.addEventListener('click', deleteCandidate);
+        }
+      });
 
-      colbuttonsArray.forEach(col =>
-        col.addEventListener('click', function(e) {
-          e.stopPropagation();
-          e.preventDefault();
-          console.log('i was clicked');
-        })
-      );
+      // document
+      //   .querySelector('.container-canvas')
+      //   .addEventListener('click', function(event) {
+      //     if (event.target.classList.contains('change-button')) {
+      //       // Do something
+      //       console.log('yes', this);
+      //     }
+      //   });
     </script>
   </body>
 </html>
