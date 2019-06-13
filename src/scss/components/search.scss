@@ -1,0 +1,24 @@
+.suggestions {
+  z-index: 100;
+  position: absolute;
+  top: 35px;
+  left: 42px;
+  display: none;
+}
+.suggestions li {
+  background: rgba(255, 255, 255, 0.892);
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 0;
+  padding: 20px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.suggestions_on {
+  display: block;
+}
