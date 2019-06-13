@@ -41,7 +41,7 @@
             <input type="text" name="age" placeholder="Ålder" required />
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
-            <input type="text" name="image" placeholder="Bild" required />
+            <input type="text" name="image" placeholder="Bild" />
             <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt" selected>Kontakt</option>
@@ -50,8 +50,9 @@
               <option value="Erbjudande">Erbjudande</option>
               <option value="Avslutad">Avslutad</option>
             </select>
-            <input type="submit" value="+ Lägg till" />
+            <input type="submit" value="Spara" />
           </form>
+          <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
         <div class="wrapper">
           <h2>Dialog</h2>
@@ -66,7 +67,7 @@
             <input type="text" name="age" placeholder="Ålder" required />
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
-            <input type="text" name="image" placeholder="Bild" required />
+            <input type="text" name="image" placeholder="Bild" />
             <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
@@ -75,8 +76,9 @@
               <option value="Erbjudande">Erbjudande</option>
               <option value="Avslutad">Avslutad</option>
             </select>
-            <input type="submit" value="+ Lägg till" />
+            <input type="submit" value="Spara" />
           </form>
+          <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
         <div class="wrapper">
           <h2>Intervju</h2>
@@ -91,7 +93,7 @@
             <input type="text" name="age" placeholder="Ålder" required />
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
-            <input type="text" name="image" placeholder="Bild" required />
+            <input type="text" name="image" placeholder="Bild" />
             <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
@@ -100,8 +102,9 @@
               <option value="Erbjudande">Erbjudande</option>
               <option value="Avslutad">Avslutad</option>
             </select>
-            <input type="submit" value="+ Lägg till" />
+            <input type="submit" value="Spara" />
           </form>
+          <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
         <div class="wrapper">
           <h2>Erbjudande</h2>
@@ -116,7 +119,7 @@
             <input type="text" name="age" placeholder="Ålder" required />
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
-            <input type="text" name="image" placeholder="Bild" required />
+            <input type="text" name="image" placeholder="Bild" />
             <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
@@ -125,7 +128,7 @@
               <option value="Erbjudande" selected>Erbjudande</option>
               <option value="Avslutad">Avslutad</option>
             </select>
-            <input type="submit" value="+ Lägg till" />
+            <input type="submit" value="Spara" />
           </form>
           <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
@@ -142,7 +145,7 @@
             <input type="text" name="age" placeholder="Ålder" required />
             <input type="text" name="email" placeholder="Email" required />
             <input type="text" name="address" placeholder="Adress" required />
-            <input type="text" name="image" placeholder="Bild" required />
+            <input type="text" name="image" placeholder="Bild" />
             <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt">Kontakt</option>
@@ -151,8 +154,9 @@
               <option value="Erbjudande">Erbjudande</option>
               <option value="Avslutad" selected>Avslutad</option>
             </select>
-            <input type="submit" value="+ Lägg till" />
+            <input type="submit" value="Spara" />
           </form>
+          <span class="add-person-dialogue">+ Lägg till ett kort till</span>
         </div>
       </div>
     </div>
@@ -178,9 +182,12 @@
       );
 
       function toggleFoldout(e) {
-        console.log(this);
         const myParentDiv = this.parentNode.querySelector('form');
-        console.log(myParentDiv);
+        const toggleButtons = this.parentNode.querySelector('form');
+        this.innerHTML === '+ Lägg till ett kort till'
+          ? (this.innerHTML = '⏤ Stäng')
+          : (this.innerHTML = '+ Lägg till ett kort till');
+
         myParentDiv.classList.toggle('add-person_open');
       }
 

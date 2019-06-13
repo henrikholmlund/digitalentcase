@@ -14,13 +14,17 @@ function updateCandidate(e) {
 
   //get values from editable HTML
   const peopleList = document.querySelector('.people');
-  const name = this.parentNode.querySelector('[name=name]').innerHTML;
-  const age = this.parentNode.querySelector('[name=age]').innerHTML;
-  const email = this.parentNode.querySelector('[name=email]').innerHTML;
-  const address = this.parentNode.querySelector('[name=address]').innerHTML;
-  const image = this.parentNode.querySelector('[name=image]').innerHTML;
-  const stage = this.parentNode.querySelector('[name=stage]').value;
-  const userID = this.parentNode.dataset.id;
+  const name = this.parentNode.parentNode.querySelector('[name=name]')
+    .innerHTML;
+  const age = this.parentNode.parentNode.querySelector('[name=age]').innerHTML;
+  const email = this.parentNode.parentNode.querySelector('[name=email]')
+    .innerHTML;
+  const address = this.parentNode.parentNode.querySelector('[name=address]')
+    .innerHTML;
+  const image = this.parentNode.parentNode.querySelector('[name=image]')
+    .innerHTML;
+  const stage = this.parentNode.parentNode.querySelector('[name=stage]').value;
+  const userID = this.parentNode.parentNode.dataset.id;
   const people = JSON.parse(localStorage.getItem('people')) || [];
 
   const person = {

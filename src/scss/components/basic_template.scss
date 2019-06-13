@@ -149,6 +149,10 @@ button {
   }
 }
 
+.add-person-dialogue {
+  text-align: center;
+}
+
 .container {
   position: relative;
   flex-grow: 1;
@@ -183,6 +187,8 @@ h2 {
   text-align: left;
   list-style: none;
   min-height: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
 }
 
 .people li {
@@ -209,6 +215,7 @@ h2 {
 .stage-select {
   height: 34px;
   border-radius: 3px;
+  width: 219px;
 }
 
 .add-person {
@@ -253,7 +260,22 @@ select {
   border: 1px solid gray;
   p {
     padding: 5px;
+    margin: 0;
   }
+  span {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.7);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
 }
 
 .form-container {

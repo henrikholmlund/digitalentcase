@@ -20,16 +20,9 @@ const ID = function() {
   );
 };
 
-// function createEventListener(id) {
-//   const element = document.querySelector(`[data-id="${id}"]`);
-
-//   return element.addEventListener('click', function(event) {
-//     console.log('was clicked', this);
-//   });
-// }
-
 function addCandidate(e) {
   e.preventDefault();
+  const people = JSON.parse(localStorage.getItem('people')) || [];
   const name = this.querySelector('[name=name]').value;
   const age = this.querySelector('[name=age]').value;
   const email = this.querySelector('[name=email]').value;
@@ -71,11 +64,22 @@ export function populateList(people = [], peopleList) {
       <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p contenteditable="true" name="name">${person.name}</p>
-        <p contenteditable="true" name="age">${person.age}</p>
-        <p contenteditable="true" name="email">${person.email}</p>
-        <p contenteditable="true" name="address">${person.address}</p>
-        <p contenteditable="true" name="image">${person.image}</p>
+          <span>Namn: </span><p contenteditable="true" name="name">${
+            person.name
+          }</p>
+        <span>Ålder: </span><p contenteditable="true" name="age">${
+          person.age
+        }</p>
+        <span>Email: </span><p contenteditable="true" name="email">${
+          person.email
+        }</p>
+        <span>Adress: </span><p contenteditable="true" name="address">${
+          person.address
+        }</p>
+        <span>Bild: </span><p contenteditable="true" name="image">${
+          person.image
+        }</p>
+       
         <select class="stage-select" name="stage">
               <option value="">-Rekryteringssteg-</option>
               <option value="Kontakt" selected>Kontakt</option>
@@ -84,9 +88,11 @@ export function populateList(people = [], peopleList) {
               <option value="Erbjudande">Erbjudande</option>
               <option value="Avslutad" >Avslutad</option>
         </select>
-        <p >${person.userID}</p>
-        <button class="change-button">Ändra</button>
-        <button class="delete-button">Ta bort</button>
+        <div class="button-container">
+          <button class="change-button">Ändra</button>
+          <button class="delete-button">Ta bort</button>
+        </div>
+        
       </div>
     `;
         })
@@ -97,16 +103,38 @@ export function populateList(people = [], peopleList) {
         .filter(person => person.stage === 'Dialog')
         .map((person, i) => {
           return `
-      <div id="${person.userID}" data-id="${
+          <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p>${person.name}</p>
-        <p>${person.age}</p>
-        <p>${person.email}</p>
-        <p>${person.address}</p>
-        <p>${person.image}</p>
-        <p >${person.stage}</p>
-        <p>${person.userID}</p>
+          <span>Namn: </span><p contenteditable="true" name="name">${
+            person.name
+          }</p>
+        <span>Ålder: </span><p contenteditable="true" name="age">${
+          person.age
+        }</p>
+        <span>Email: </span><p contenteditable="true" name="email">${
+          person.email
+        }</p>
+        <span>Adress: </span><p contenteditable="true" name="address">${
+          person.address
+        }</p>
+        <span>Bild: </span><p contenteditable="true" name="image">${
+          person.image
+        }</p>
+       
+        <select class="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" >Kontakt</option>
+              <option value="Dialog" selected>Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad" >Avslutad</option>
+        </select>
+        <div class="button-container">
+          <button class="change-button">Ändra</button>
+          <button class="delete-button">Ta bort</button>
+        </div>
+        
       </div>
     `;
         })
@@ -117,16 +145,38 @@ export function populateList(people = [], peopleList) {
         .filter(person => person.stage === 'Intervju')
         .map((person, i) => {
           return `
-      <div id="${person.userID}" data-id="${
+          <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p>${person.name}</p>
-        <p>${person.age}</p>
-        <p>${person.email}</p>
-        <p>${person.address}</p>
-        <p>${person.image}</p>
-        <p>${person.stage}</p>
-        <p>${person.userID}</p>
+          <span>Namn: </span><p contenteditable="true" name="name">${
+            person.name
+          }</p>
+        <span>Ålder: </span><p contenteditable="true" name="age">${
+          person.age
+        }</p>
+        <span>Email: </span><p contenteditable="true" name="email">${
+          person.email
+        }</p>
+        <span>Adress: </span><p contenteditable="true" name="address">${
+          person.address
+        }</p>
+        <span>Bild: </span><p contenteditable="true" name="image">${
+          person.image
+        }</p>
+       
+        <select class="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" >Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju" selected>Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad" >Avslutad</option>
+        </select>
+        <div class="button-container">
+          <button class="change-button">Ändra</button>
+          <button class="delete-button">Ta bort</button>
+        </div>
+        
       </div>
     `;
         })
@@ -137,16 +187,38 @@ export function populateList(people = [], peopleList) {
         .filter(person => person.stage === 'Erbjudande')
         .map((person, i) => {
           return `
-      <div id="${person.userID}" data-id="${
+          <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p>${person.name}</p>
-        <p>${person.age}</p>
-        <p>${person.email}</p>
-        <p>${person.address}</p>
-        <p>${person.image}</p>
-        <p >${person.stage}</p>
-        <p>${person.userID}</p>
+          <span>Namn: </span><p contenteditable="true" name="name">${
+            person.name
+          }</p>
+        <span>Ålder: </span><p contenteditable="true" name="age">${
+          person.age
+        }</p>
+        <span>Email: </span><p contenteditable="true" name="email">${
+          person.email
+        }</p>
+        <span>Adress: </span><p contenteditable="true" name="address">${
+          person.address
+        }</p>
+        <span>Bild: </span><p contenteditable="true" name="image">${
+          person.image
+        }</p>
+       
+        <select class="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" >Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande" selected>Erbjudande</option>
+              <option value="Avslutad">Avslutad</option>
+        </select>
+        <div class="button-container">
+          <button class="change-button">Ändra</button>
+          <button class="delete-button">Ta bort</button>
+        </div>
+        
       </div>
     `;
         })
@@ -157,16 +229,38 @@ export function populateList(people = [], peopleList) {
         .filter(person => person.stage === 'Avslutad')
         .map((person, i) => {
           return `
-      <div id="${person.userID}" data-id="${
+          <div id="${person.userID}" data-id="${
             person.userID
           }" name="person${i}" class="people-list" draggable="true" ondragstart="dragstart_handler(event);">
-        <p>${person.name}</p>
-        <p>${person.age}</p>
-        <p>${person.email}</p>
-        <p>${person.address}</p>
-        <p>${person.image}</p>
-        <p >${person.stage}</p>
-        <p>${person.userID}</p>
+          <span>Namn: </span><p contenteditable="true" name="name">${
+            person.name
+          }</p>
+        <span>Ålder: </span><p contenteditable="true" name="age">${
+          person.age
+        }</p>
+        <span>Email: </span><p contenteditable="true" name="email">${
+          person.email
+        }</p>
+        <span>Adress: </span><p contenteditable="true" name="address">${
+          person.address
+        }</p>
+        <span>Bild: </span><p contenteditable="true" name="image">${
+          person.image
+        }</p>
+       
+        <select class="stage-select" name="stage">
+              <option value="">-Rekryteringssteg-</option>
+              <option value="Kontakt" >Kontakt</option>
+              <option value="Dialog">Dialog</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Erbjudande">Erbjudande</option>
+              <option value="Avslutad" selected>Avslutad</option>
+        </select>
+        <div class="button-container">
+          <button class="change-button">Ändra</button>
+          <button class="delete-button">Ta bort</button>
+        </div>
+        
       </div>
     `;
         })
